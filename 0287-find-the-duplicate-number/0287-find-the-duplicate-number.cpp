@@ -1,15 +1,15 @@
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {  
-        map<int,int> mpp;
-        for(int i=0;i<nums.size();i++){
-            mpp[nums[i]]++;
+    int n = nums.size();
+    vector<int> freq(n + 1, 0);
+    for (int i = 0; i < n; i++) {
+        if (freq[nums[i]] == 0) {
+        freq[nums[i]] += 1;
+        } else {
+        return nums[i];
         }
-        for(auto it:mpp){
-            if(it.second>1){
-                return it.first;
-            }
-        }
-        return 0;
+    }
+    return 0;
     }
 };
