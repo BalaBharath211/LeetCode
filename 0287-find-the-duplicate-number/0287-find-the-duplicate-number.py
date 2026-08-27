@@ -4,8 +4,8 @@ class Solution:
         h=[0]*(n+1)
         for i in nums:
             if h[i]==0:
-                h[i]=+1
-            elif h[i]==1:
+                h[i]+=1
+            else:
                 return i
 
         
